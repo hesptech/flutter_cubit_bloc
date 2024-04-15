@@ -28,6 +28,13 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Divider(),
           ),
+
+          ListTile(
+            title: const Text('update BLoC'),
+            subtitle: const Text('Updated BLoC State Management'),
+            trailing: const Icon( Icons.arrow_forward_ios_rounded ),
+            onTap: () => context.push('/update-counter-bloc'),
+          ),
         ],
       ),
     );

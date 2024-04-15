@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '/presentation/blocs/counter_cubit/counter_cubit.dart';
+import '/presentation/blocs/update_cubit/update_counter_cubit.dart';
 
-class CubitCounterScreen extends StatelessWidget {
-  const CubitCounterScreen({super.key});
+class UpdateBlocCounterScreen extends StatelessWidget {
+  const UpdateBlocCounterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (_) => CounterCubit(), child: const _CubitCounterView());
+        create: (_) => UpdateCounterCubit(), child: const _UpdateCubitCounterView());
   }
 }
 
-class _CubitCounterView extends StatelessWidget {
-  const _CubitCounterView();
+
+
+class _UpdateCubitCounterView extends StatelessWidget {
+  const _UpdateCubitCounterView();
 
   void increaseCounterBy( BuildContext context, [ int value = 1 ]) {
-    context.read<CounterCubit>().increaseBy(value);
+    context.read<UpdateCounterCubit>().increaseBy(value);
   }
 
 
@@ -27,19 +29,19 @@ class _CubitCounterView extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: context.select(( CounterCubit value) {
+          title: context.select(( UpdateCounterCubit value) {
             return Text('Cubit Counter: ${ value.state.transactionCount }');
           }),
           actions: [
             IconButton(
                 onPressed: () {
-                  context.read<CounterCubit>().reset();
+                  context.read<UpdateCounterCubit>().reset();
                 }, 
               icon: const Icon(Icons.refresh_outlined))
           ],
         ),
         body: Center(
-          child: BlocBuilder<CounterCubit, CounterState>(
+          child: BlocBuilder<UpdateCounterCubit, UpdateCounterInitial>(
             // buildWhen: (previous, current) => current.counter != previous.counter,
             builder: (context, state) {
               print('Estado cambió');

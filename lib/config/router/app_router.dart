@@ -20,5 +20,10 @@ final appRouter = GoRouter(
       builder: (context, state) => const BlocCounterScreen(),
     ),
 
+    GoRoute(
+      path: '/update-counter-bloc',
+      builder: (context, state) => const UpdateBlocCounterScreen(),
+    ),
+
   ]
 );
