@@ -7,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Flutter Cubit BLoC - (Formularios)'),),
       body: ListView(
         children: <Widget>[
 
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           ListTile(
-            title: const Text('update BLoC'),
+            title: const Text('BLoC "flutter_bloc: ^8.1.5" update'),
             subtitle: const Text('Updated BLoC State Management'),
             trailing: const Icon( Icons.arrow_forward_ios_rounded ),
             onTap: () => context.push('/update-counter-bloc'),
@@ -42,7 +43,7 @@ class HomeScreen extends StatelessWidget {
           ),
 
           ListTile(
-            title: const Text('Nuevo usuario'),
+            title: const Text('Cubit - Nuevo usuario'),
             subtitle: const Text('Manejo de formularios'),
             trailing: const Icon( Icons.arrow_forward_ios_rounded ),
             onTap: () => context.push('/new-user'),
