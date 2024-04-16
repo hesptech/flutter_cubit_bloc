@@ -44,7 +44,7 @@ class _UpdateCubitCounterView extends StatelessWidget {
           child: BlocBuilder<UpdateCounterCubit, UpdateCounterInitial>(
             // buildWhen: (previous, current) => current.counter != previous.counter,
             builder: (context, state) {
-              print('Estado cambió');
+              //print('Estado cambió');
               return Text('Counter value: ${ state.counter }');
             },
           ),
