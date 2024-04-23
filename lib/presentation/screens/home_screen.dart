@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Flutter Cubit BLoC - (Formularios)'),),
       body: ListView(
         children: <Widget>[
+          _subtitle('Flutter - Móvil: De cero a experto'),
 
           ListTile(
             title: const Text('Cubits'),
@@ -56,10 +57,7 @@ class HomeScreen extends StatelessWidget {
             onTap: () => context.push('/new-user-bloc'),
           ),
 
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Divider(),
-          ),
+          _subtitle('Medium differences-between-bloc-and-riverpod'),
 
           ListTile(
             title: const Text('BLoC - simple Counter'),
@@ -68,10 +66,7 @@ class HomeScreen extends StatelessWidget {
             onTap: () => context.push('/counter-bloc-simple'),
           ),
 
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Divider(),
-          ),
+          _subtitle('Mini-Curso: Flutter BLoC'),
 
           ListTile(
             title: const Text('BLoC - username'),
@@ -82,6 +77,22 @@ class HomeScreen extends StatelessWidget {
 
         ],
       ),
+    );
+  }
+
+  Widget _subtitle(String subTitle) {
+    return Column(
+      children: [
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Divider(),
+        ),
+        Text(subTitle, style: const TextStyle(fontWeight: FontWeight.bold),),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Divider(),
+        ),
+      ],
     );
   }
 }
