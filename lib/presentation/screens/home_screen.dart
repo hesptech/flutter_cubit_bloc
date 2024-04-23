@@ -56,6 +56,17 @@ class HomeScreen extends StatelessWidget {
             onTap: () => context.push('/new-user-bloc'),
           ),
 
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Divider(),
+          ),
+
+          ListTile(
+            title: const Text('BLoC - simple Counter'),
+            subtitle: const Text('one file bloc'),
+            trailing: const Icon( Icons.arrow_forward_ios_rounded ),
+            onTap: () => context.push('/counter-bloc-simple'),
+          ),
         ],
       ),
     );
