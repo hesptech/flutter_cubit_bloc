@@ -6,3 +6,8 @@ sealed class UsernameEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class GenerateUsername extends UsernameEvent {
+  final String value;
+  const GenerateUsername(this.value);
+}

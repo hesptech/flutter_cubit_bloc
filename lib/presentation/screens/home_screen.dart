@@ -67,6 +67,19 @@ class HomeScreen extends StatelessWidget {
             trailing: const Icon( Icons.arrow_forward_ios_rounded ),
             onTap: () => context.push('/counter-bloc-simple'),
           ),
+
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Divider(),
+          ),
+
+          ListTile(
+            title: const Text('BLoC - username'),
+            subtitle: const Text('username - Mini-Curso: Flutter BLoC '),
+            trailing: const Icon( Icons.arrow_forward_ios_rounded ),
+            onTap: () => context.push('/username-bloc'),
+          ),
+
         ],
       ),
     );

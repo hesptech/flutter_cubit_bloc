@@ -16,7 +16,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
   void _onUsernameChanged( UsernameChanged event, Emitter<RegisterState> emit ) {
     final username = Username.dirty(event.value);
-        print('---------------------------------');
+        //print('---------------------------------');
     emit(
       state.copyWith(
         username: username,
@@ -40,12 +40,12 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         isValid: Formz.validate([
           state.username, 
           state.password,
-          // TODO: state.email
+          // state.email
         ])
       )
     );
 
-    print('Bloc Submit: $state');
+    //print('Bloc Submit: $state');
   }
 
   void onSubmit(){

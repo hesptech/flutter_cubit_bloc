@@ -5,9 +5,21 @@ part 'username_event.dart';
 part 'username_state.dart';
 
 class UsernameBloc extends Bloc<UsernameEvent, UsernameState> {
-  UsernameBloc() : super(UsernameInitial()) {
-    on<UsernameEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  UsernameBloc() : super(const UsernameState()) {
+    /* on<UsernameEvent>((event, emit) {
+      
+    }); */
+
+    on<GenerateUsername>( _onUsername );
+  }
+
+  void _onUsername(GenerateUsername event, Emitter<UsernameState> emit) {
+    emit(state.copyWith(
+      userName: event.value
+    ));
+  }
+
+  void setUsername(String userName) {
+    add(GenerateUsername(userName));
   }
 }
