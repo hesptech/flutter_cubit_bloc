@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_cubit_bloc/presentation/blocs/bloc/simple_counter_bloc.dart';
+import 'package:flutter_cubit_bloc/presentation/blocs/simple_counter_bloc/simple_counter_bloc.dart';
 
 class BlocSimpleCounterScreen extends StatelessWidget {
   const BlocSimpleCounterScreen({super.key});
